@@ -12,7 +12,7 @@ def contains_special_character(value):
 # 실습으로 완성해 주세요
 def contains_uppercase_letter(value):
     for char in value:
-        if char in value.isupper():
+        if char.isupper():
             return True
     return False
 
@@ -20,7 +20,7 @@ def contains_uppercase_letter(value):
 # 실습으로 완성해 주세요
 def contains_lowercase_letter(value):
     for char in value:
-        if char in value.lower():
+        if char.lower():
             return True
     return False
 
@@ -28,7 +28,7 @@ def contains_lowercase_letter(value):
 # 실습으로 완성해 주세요
 def contains_number(value):
     for char in value:
-        if char in value.isdigit():
+        if char.isdigit():
             return True
     return False
 
