@@ -21,7 +21,7 @@
         <div class="form-error error-message">{{ error }}</div>
       {% endfor %}
       <div>
-        {{form.login|add_class:"cp-input"|attr:"placeholder:이메일"|add_error_class:"error" }}
+        {{form.login|add_class:"cp-input"|attr:"placeholder:이메일 "|add_error_class:"error" }}
         {% for error in form.login.errors %}
           <div class="form-error error-message">{{ error }}</div>
         {% endfor %}
