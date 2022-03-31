@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from .validators import validate_no_special_characters, validate_restaurant_link
@@ -33,9 +34,9 @@ class Review(models.Model):
     ]
     rating = models.IntegerField(choices=RATING_CHOICES)
 
-    image1 = models.ImageField()
-    image2 = models.ImageField()
-    image3 = models.ImageField()
+    image1 = models.ImageField(upload_to="review_pics")
+    image2 = models.ImageField(upload_to="review_pics", blank=True)
+    image3 = models.ImageField(upload_to="review_pics", blank=True)
     content = models.TextField()
     dt_created = models.DateTimeField(auto_now_add=True)
     dt_update = models.DateTimeField(auto_now=True)
