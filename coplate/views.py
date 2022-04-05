@@ -1,8 +1,8 @@
-from re import template
 from django.shortcuts import render
 from django.urls import reverse
-from django.generic import ListView
+from django.views.generic import ListView
 from allauth.account.views import PasswordChangeView
+from coplate.models import Review
 
 # Create your views here.
 class IndexView(ListView):
