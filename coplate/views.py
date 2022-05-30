@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.urls import reverse
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 from allauth.account.views import PasswordChangeView
 from coplate.models import Review
+from coplate.forms import ReviewForm
 
 # Create your views here.
 class IndexView(ListView):
@@ -17,9 +18,15 @@ class ReviewDetailView(DetailView):
     template_name = "coplate/review_detail.html"
     pk_url_kwarg = "review_id"
 
+class ReviewCreateView(CreateView):
+    model = Review
+    form_class = ReviewForm
+    template_name = "coplate/review_form.html"
+
 class CustomPasswordChangeView(PasswordChangeView):
     def get_success_url(self):
         return reverse("index")
+
 
 
 
